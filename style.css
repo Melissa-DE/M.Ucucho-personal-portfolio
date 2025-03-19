@@ -1,0 +1,658 @@
+* header {
+    background-color: #001737;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+header .Logo {
+    height: auto;
+    max-height: 120px; /* Default maximum height for the logo */
+    width: auto;
+    max-width: 150px;
+    margin-left: 10px;
+}
+
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 768px) {
+    header .Logo {
+        max-height: 150px;
+        max-width: 200px;
+    }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column; /* Stacks elements vertically for smaller devices */
+        align-items: center;
+        padding: 10px;
+    }
+
+    header .Logo {
+        max-height: 80px; /* Reduces logo size for better fit on small screens */
+        max-width: 100px;
+        margin-left: 0; /* Centers logo without extra spacing */
+    }
+
+}
+
+
+h1 {
+    text-align: center;
+    color: #001737; /* Dark blue for text */
+    font-size: 46px; /* Adjust font size */
+    margin: 100px; /* Remove margin to fully center */
+    padding: 50px;
+    border: 10px solid #dfdfff; /* Solid border */
+    box-shadow: 4px 4px 10px #dfdfff; /* Light shadow effect */
+    background-color: #ffff; /* Background for the heading */
+    display: block;
+    width: auto; /* Automatically adjust to content */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px; /* Smaller font for tablets */
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px; /* Smaller font for mobile screens */
+        padding: 20px;
+    }
+}
+
+/* General Reset for List */
+.nav-links {
+    display: flex; /* Arrange items horizontally */
+    justify-content: center; /* Center the navigation links */
+    gap: 30px; /* Space between each link */
+    list-style: none; /* Remove bullets or list styles */
+    padding: 0;
+    margin: 0;
+}
+
+/* Navigation Links */
+.nav-links a {
+    text-decoration: none; /* Remove default underline */
+    font-size: 1.2rem; /* Increase font size */
+    font-weight: bold;
+    color: #ffffff; /* Dark blue for links */
+    position: relative; /* Required for underline effect */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Position the underline slightly below the text */
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #e1a730; /* Gold underline */
+    transition: width 0.3s ease; /* Smooth animation for underline */
+}
+
+/* Expand underline on hover */
+.nav-links a:hover::after {
+    width: 100%; /* Full width underline */
+}
+
+/* Change link color on hover */
+.nav-links a:hover {
+    color: #ffffff; /* Matches underline hover color */
+}
+
+/* Corresponding active section highlight */
+.nav-links a.active {
+    color: #e1a730; /* Active link color */
+    font-weight: bold;
+    border-bottom: 3px solid #e1a730; /* Optional: Add bottom border for active link */
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Clean and professional font */
+    background-color: #ffffff; /* Light gray background for elegance */
+    box-sizing: border-box;
+}
+
+/* Business Card Section */
+#business-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 10px;
+    background: linear-gradient(-45deg, #cfced0, #0000, #cfced0, #0000); /* Luxurious gradient background */
+    background-size: 400% 400%; /* Animate gradient */
+    animation: gradientAnimation 10s ease infinite; /* Infinite smooth gradient animation */
+}
+
+/* Business Card Container */
+.business-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for responsiveness */
+    background-color: #ffffff; /* White card background */
+    border: 3px solid #001737; /* Luxurious gold border */
+    box-shadow: 8px 8px 20px rgba(16, 41, 69, 0.2); /* Subtle shadow for depth */
+    border-radius: 25px; /* Rounded corners */
+    overflow: hidden; /* Clean edges for image */
+    width: 90%; /* Responsive card width */
+    max-width: 900px; /* Limit maximum width */
+    animation: glowAnimation 2s infinite; /* Glowing effect animation */
+}
+
+/* Text Content */
+.business-card-content {
+    flex: 1; /* Occupy available space */
+    padding: 40px;
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+}
+
+/* H1 Styling */
+.business-card-content h1 {
+    font-size: 36px; /* Heading size */
+    color: #001737; /* Deep navy blue */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.business-card-content h1 span {
+    color: #e1a730; /* Luxurious gold for emphasis */
+}
+
+/* H2 Styling */
+.business-card-content h2 {
+    font-size: 30px; /* Subtitle size */
+    color: #000000; /* Complementary dark blue */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px; /* Space above icons */
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.social-icons a {
+    color: #001737; /* Default navy blue */
+    font-size: 30px; /* Icon size */
+    text-decoration: none; 
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icons a:hover {
+    color: #e1a730; /* Gold hover effect */
+    transform: scale(1.1); /* Subtle zoom effect */
+}
+
+/* Profile Picture */
+.business-card-image img {
+    max-width: 300px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50px 50px 50px 50px; /* Rounded edges only on right */
+    object-fit: cover; /* Cover the available space neatly */
+}
+/* About Me Section */
+#about {
+    padding: 50px 20px;
+    background: linear-gradient(to right, #001737, #102945); /* Luxurious gradient */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .business-card-content {
+        padding: 10px; /* Tighten padding on smaller screens */
+    }
+
+    .business-card-content h1 {
+        font-size: 24px;
+    }
+
+    .business-card-content h2 {
+        font-size: 18px;
+    }
+
+    .social-icons {
+        flex-wrap: wrap; /* Allow wrapping for tighter layouts */
+        justify-content: center;
+    }
+}
+/* About Me Container */
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Responsive layout for small screens */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Space between image and text */
+    opacity: 0; /* Hidden by default for animation */
+    animation: slideIn 1s ease-out forwards; /* Smooth slide-in animation */
+}
+
+/* Image Styling */
+.about-image {
+    max-width: 300px;
+    width: 100%; /* Responsive */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Elegant shadow */
+    object-fit: cover; /* Maintain aspect ratio */
+    animation: fadeInLeft 1s ease-out; /* Slide-in animation for the image */
+}
+
+/* Content Styling */
+.about-content {
+    flex: 1; /* Take up remaining space */
+    color: #ffffff; /* White text for readability */
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(16, 41, 69, 0.8); /* Subtle overlay effect */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+.about-content h2 {
+    font-size: 32px;
+    color: #e1a730; /* Gold header */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Paragraph Styling */
+.about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Slide-In Animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Fade-In Left Animation */
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column; /* Stack image and text */
+        text-align: center;
+    }
+    .about-content {
+        padding: 15px;
+    }
+    .about-content h2 {
+        font-size: 24px;
+    }
+    .about-content p {
+        font-size: 14px;
+    }
+}
+.sections-container {
+    display: flex; /* Align sections side by side */
+    justify-content: center; /* Center the content horizontally */
+    gap: 20px; /* Space between the cards */
+    padding: 20px;
+}
+
+/* Card Styling */
+.Mission-content, .Vision-content {
+    width: 400px; /* Card width */
+    background-color: #001737;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card shadow */;
+    padding: 20px;
+    border-style: solid;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Mission-content:hover, .Vision-content:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Styling */
+.Mission-content h2, .Vision-content h2 {
+    font-size: 2rem; /* Large heading font size */
+    color: #e1a730;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+.Mission-content p, .Vision-content p {
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .sections-container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center;
+        gap: 15px;
+    }
+}
+/* Portfolio Section Styling */
+#Qualification {
+    padding: 50px 20px;
+    background-color: #0a101a; /* Dark navy background */
+    color: #cfced0; /* Soft gray-white text */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For animations */
+}
+
+/* Section Heading */
+h2.typewriter {
+    font-size: 36px;
+    color: #e1a730; /* Gold color for heading */
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out; /* Fade-in animation */
+}
+
+/* Portfolio Section */
+#qualification {
+    padding: 50px 20px;
+    background: radial-gradient(circle, #0a101a, #001737); /* Funky radial gradient */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif; /* Fun, modern font */
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* For cool effects */
+}
+
+/* Animated Heading */
+h2.typewriter {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ffffff; /* Gold for pop */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    animation: flicker 1.5s infinite; /* Funky flickering effect */
+}
+
+/* Flicker Animation for Heading */
+@keyframes flicker {
+    0%, 100% {
+        text-shadow: 0 0 10px #000000, 0 0 20px #eee5d9, 0 0 30px #e1a730;
+    }
+    50% {
+        text-shadow: 0 0 5px #ffffff, 0 0 15px #e1a730, 0 0 25px #ffffff;
+    }
+}
+@media (max-width: 768px) {
+    #qualification {
+        padding: 20px 10px;
+    }
+    h2.typewriter {
+        font-size: 28px; /* Scaled down for smaller screens */
+    }
+}
+#qualification {
+    margin: 20px auto;
+}
+
+
+.information-technology {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between items */
+    margin-top: 20px;
+}
+
+/* Image and Hover Effect Styling */
+.photo {
+    width: 100px; /* Ensure uniform width */
+    height: 100px; /* Ensure uniform height */
+    border-radius: 10px; /* Rounded edges */
+    object-fit: cover; /* Maintain aspect ratio while covering area */
+    border: 3px solid #007BFF; /* Border around images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover */
+}
+
+.photo:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Add shadow for hover effect */
+}
+
+/* List Item Styling */
+.information-technology li {
+    font-weight: bold; /* Bold font */
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+/* Download Button */
+.download-btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #001737;
+    background-color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #e1a730;
+    transform: translateY(-5px);
+}
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffffff; /* Background color */
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.package {
+    text-align: center;
+    border: 10px solid #001737;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.package:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.package img.hero {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 15px 0;
+}
+
+.features {
+    font-size: 0.9rem;
+    color: #000000;
+    line-height: 1.5;
+}
+
+.package h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000000;
+    font-size: 42px;
+    font-style: italic;
+}
+
+
+
+body {
+    font-family: 'Times New Roman', Times;
+    margin: 40;
+    padding: 30;
+    background-color: #dfdfff; /* Soft background color */
+    color: #001737; /* Text color */
+}
+
+/* Contact Section */
+#Contact {
+    display: flex;
+    justify-content: center; /* Center the form horizontally */
+    align-items: center; /* Center the form vertically */
+    text-align: center;
+    height: 100vh; /* Full-screen height */
+    background-image: url('fotos/new logo.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding: 20px; 
+}
+/* Contact Form */
+.Contact-form {
+    background: rgba(0, 0, 0, 0.911); /* Add a semi-transparent black background */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 95%;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+.Contact-form h2 {
+    font-size: 2rem;
+    color: #e1a730; /* Golden yellow heading */
+    margin-bottom: 10px;
+}
+
+.Contact-form p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #cfced0; /* Light gray text */
+}
+
+.Contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Contact-form input,
+.Contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e1a730; /* Golden border */
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #001737; /* Dark blue text */
+    outline: none;
+}
+
+.Contact-form button {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #e1a730; /* Golden yellow button */
+    color: #001737; /* Dark blue text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Contact-form button:hover {
+    background-color: #cfced0; /* Light gray hover effect */
+    transform: translateY(-2px);
+}
+footer {
+    background-color: #001737; /* Dark blue background */
+    color: #ffffff; /* White text color */
+    text-align: center; /* Center-align the content */
+    padding: 15px 10px; /* Padding inside the footer */
+    border-top: 3px solid #e1a730; /* Golden border at the top */
+    font-size: 1rem; /* Standard text size */
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+}
+
+footer p {
+    margin: 0; /* Remove default margins */
+    font-size: 1.1rem; /* Slightly larger text size for better readability */
+    letter-spacing: 0.5px; /* Add slight spacing between letters */
+}
+
+footer a {
+    color: #e1a730; /* Golden color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold links for emphasis */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+footer a:hover {
+    color: #ffffff; /* Change link color to white on hover */
+}
+
+body {
+    margin: 0; /* Remove extra space around the body */
+    padding: 0; /* Ensure consistent padding */
+}
