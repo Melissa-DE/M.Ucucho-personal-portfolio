@@ -493,12 +493,15 @@ body {
     background-color: #ffffff; /* Background color */
 }
 
+/* Pricing Container */
 .pricing-container {
     display: flex;
     justify-content: space-around;
     gap: 20px;
+    flex-wrap: wrap; /* Wrap items for smaller screens */
 }
 
+/* Package Styling */
 .package {
     text-align: center;
     border: 10px solid #001737;
@@ -506,19 +509,24 @@ body {
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #fff;
+    width: 30%; /* Set initial width */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
+/* Adjust Package Hover */
 .package:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Hero Image */
 .package img.hero {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
+/* Price Text */
 .price {
     font-size: 1.5rem;
     font-weight: bold;
@@ -526,17 +534,20 @@ body {
     margin: 15px 0;
 }
 
+/* Features List */
 .features {
     font-size: 0.9rem;
     color: #000000;
     line-height: 1.5;
 }
 
+/* Package Heading */
 .package h3 {
     margin-bottom: 10px;
     font-size: 1.4rem;
 }
 
+/* Section Heading */
 h2 {
     text-align: center;
     margin-bottom: 40px;
@@ -545,10 +556,30 @@ h2 {
     font-style: italic;
 }
 
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column; /* Stack items vertically */
+        gap: 15px; /* Reduced gap */
+    }
+    .package {
+        width: 90%; /* Full width for smaller screens */
+    }
+    .price {
+        font-size: 1.2rem; /* Adjust font size */
+    }
+    h2 {
+        font-size: 28px; /* Reduce size for section heading */
+    }
+    .features {
+        font-size: 0.8rem; /* Slightly smaller text for features */
+    }
+}
+
 
 
 body {
-    font-family: 'Arial, San seriff';
+    font-family: 'Times New Roman', Times;
     margin: 40;
     padding: 30;
     background-color: #dfdfff; /* Soft background color */
