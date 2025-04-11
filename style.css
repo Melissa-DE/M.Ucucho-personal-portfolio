@@ -14,14 +14,117 @@ header .Logo {
     margin-left: 10px;
 }
 
+/* Home Section */
+#Home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    padding: 20px;
+}
 
-/* Responsive Design for Larger Screens */
-@media (min-width: 768px) {
-    header .Logo {
-        max-height: 150px;
-        max-width: 200px;
+/* Business Card Container */
+.business-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    max-width: 1000px;
+    width: 100%;
+    gap: 30px;
+}
+
+/* Left Side - Text */
+.business-card-content {
+    flex: 1;
+    text-align: left;
+}
+
+.business-card-content h1 {
+    font-size: 36px;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.business-card-content h1 span {
+    color: #e1a730;
+    font-family: 'Beau Rivage', cursive;
+}
+
+.business-card-content h2 {
+    font-size: 20px;
+    color: #374151;
+    margin-bottom: 20px;
+}
+
+/* Social Icons */
+.social-icons a {
+    font-size: 22px;
+    color: #374151;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e1a730;
+    transform: scale(1.2);
+}
+
+/* Right Side - Profile Picture */
+.business-card-image img {
+    width: 300px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #001737;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .business-card-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .business-card-content {
+        align-items: center;
+    }
+
+    .business-card-content h1, .business-card-content h2 {
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
     }
 }
+@media (max-width: 400px) {
+    .business-card-content h1 {
+        font-size: 24px;
+    }
+
+    .business-card-content h2 {
+        font-size: 16px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+        padding: 6px;
+    }
+
+    .business-card-image img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
 
 /* Responsive Design for Small Screens */
 @media (max-width: 767px) {
@@ -32,7 +135,7 @@ header .Logo {
     }
 
     header .Logo {
-        max-height: 80px; /* Reduces logo size for better fit on small screens */
+        max-height: 90px; /* Reduces logo size for better fit on small screens */
         max-width: 100px;
         margin-left: 0; /* Centers logo without extra spacing */
     }
@@ -40,175 +143,120 @@ header .Logo {
 }
 
 
-h1 {
-    text-align: center;
-    color: #001737; /* Dark blue for text */
-    font-size: 46px; /* Adjust font size */
-    margin: 100px; /* Remove margin to fully center */
-    padding: 50px;
-    border: 10px solid #dfdfff; /* Solid border */
-    box-shadow: 4px 4px 10px #dfdfff; /* Light shadow effect */
-    background-color: #ffff; /* Background for the heading */
-    display: block;
-    width: auto; /* Automatically adjust to content */
-    border-radius: 10px; /* Optional: Adds rounded corners */
-}
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 36px; /* Smaller font for tablets */
-        padding: 30px;
-    }
-}
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 28px; /* Smaller font for mobile screens */
-        padding: 20px;
-    }
-}
-
-/* General Reset for List */
+/* Reset */
 .nav-links {
-    display: flex; /* Arrange items horizontally */
-    justify-content: center; /* Center the navigation links */
-    gap: 30px; /* Space between each link */
-    list-style: none; /* Remove bullets or list styles */
+    list-style: none;
     padding: 0;
     margin: 0;
-}
-
-/* Navigation Links */
-.nav-links a {
-    text-decoration: none; /* Remove default underline */
-    font-size: 1.2rem; /* Increase font size */
+  }
+  
+  /* Horizontal Nav (desktop) */
+  .desktop-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .desktop-nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #ffffff; /* Dark blue for links */
-    position: relative; /* Required for underline effect */
-    transition: color 0.3s ease; /* Smooth transition for hover */
-}
-
-/* Hover Effect */
-.nav-links a::after {
+    color: #e1a730;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .desktop-nav a::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* Position the underline slightly below the text */
+    bottom: -5px;
     left: 0;
     width: 0;
     height: 3px;
-    background-color: #e1a730; /* Gold underline */
-    transition: width 0.3s ease; /* Smooth animation for underline */
-}
-
-/* Expand underline on hover */
-.nav-links a:hover::after {
-    width: 100%; /* Full width underline */
-}
-
-/* Change link color on hover */
-.nav-links a:hover {
-    color: #ffffff; /* Matches underline hover color */
-}
+    background-color: #e1a730;
+    transition: width 0.3s ease;
+  }
+  
+  .desktop-nav a:hover::after {
+    width: 100%;
+  }
+  
+  .desktop-nav a:hover {
+    color: #ffffff;
+  }
+  
+  /* Hamburger Icon */
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    background-color: #102945;
+    border-radius: 5px;
+    z-index: 1001;
+    color: #fff;
+  }
+  
+  /* Sidebar Nav (mobile) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #001737;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+  
+  .sidebar .nav-links {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  
+  .sidebar .nav-links li {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  
 
 /* Corresponding active section highlight */
 .nav-links a.active {
     color: #e1a730; /* Active link color */
     font-weight: bold;
-    border-bottom: 3px solid #e1a730; /* Optional: Add bottom border for active link */
+    border-bottom: 3px solid #fff; /* Optional: Add bottom border for active link */
 }
 
-/* General Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif; /* Clean and professional font */
-    background-color: #ffffff; /* Light gray background for elegance */
-    box-sizing: border-box;
-}
 
-/* Business Card Section */
-#business-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    padding: 10px;
-    background: linear-gradient(-45deg, #cfced0, #0000, #cfced0, #0000); /* Luxurious gradient background */
-    background-size: 400% 400%; /* Animate gradient */
-    animation: gradientAnimation 10s ease infinite; /* Infinite smooth gradient animation */
-}
 
-/* Business Card Container */
-.business-card-container {
-    display: flex;
-    flex-wrap: wrap; /* Enable wrapping for responsiveness */
-    background-color: #ffffff; /* White card background */
-    border: 3px solid #001737; /* Luxurious gold border */
-    box-shadow: 8px 8px 20px rgba(16, 41, 69, 0.2); /* Subtle shadow for depth */
-    border-radius: 25px; /* Rounded corners */
-    overflow: hidden; /* Clean edges for image */
-    width: 90%; /* Responsive card width */
-    max-width: 900px; /* Limit maximum width */
-    animation: glowAnimation 2s infinite; /* Glowing effect animation */
-}
 
-/* Text Content */
-.business-card-content {
-    flex: 1; /* Occupy available space */
-    padding: 40px;
-    text-align: left; /* Align text to the left */
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center;
-}
-
-/* H1 Styling */
-.business-card-content h1 {
-    font-size: 36px; /* Heading size */
-    color: #001737; /* Deep navy blue */
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.business-card-content h1 span {
-    color: #e1a730; /* Luxurious gold for emphasis */
-}
-
-/* H2 Styling */
-.business-card-content h2 {
-    font-size: 30px; /* Subtitle size */
-    color: #000000; /* Complementary dark blue */
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-/* Social Icons */
-.social-icons {
-    margin-top: 10px; /* Space above icons */
-    display: flex;
-    gap: 15px; /* Space between icons */
-}
-
-.social-icons a {
-    color: #001737; /* Default navy blue */
-    font-size: 30px; /* Icon size */
-    text-decoration: none; 
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
-}
-
-.social-icons a:hover {
-    color: #e1a730; /* Gold hover effect */
-    transform: scale(1.1); /* Subtle zoom effect */
-}
-
-/* Profile Picture */
-.business-card-image img {
-    max-width: 300px; /* Adjust size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50px 50px 50px 50px; /* Rounded edges only on right */
-    object-fit: cover; /* Cover the available space neatly */
-}
 /* About Me Section */
 #about {
     padding: 50px 20px;
@@ -218,25 +266,25 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .business-card-content {
-        padding: 10px; /* Tighten padding on smaller screens */
+
+
+    .about-me {
+        flex-direction: row;
+        padding: 40px;
     }
 
-    .business-card-content h1 {
-        font-size: 24px;
+    .about-image {
+        width: 50%;
+        border-radius: 15px;
     }
 
-    .business-card-content h2 {
-        font-size: 18px;
+    .about-content {
+        width: 50%;
+        padding: 0 20px;
     }
 
-    .social-icons {
-        flex-wrap: wrap; /* Allow wrapping for tighter layouts */
-        justify-content: center;
-    }
-}
+
+
 /* About Me Container */
 .about-me {
     display: flex;
@@ -311,7 +359,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .about-me {
         flex-direction: column; /* Stack image and text */
         text-align: center;
@@ -484,14 +532,68 @@ h2.typewriter {
     background-color: #e1a730;
     transform: translateY(-5px);
 }
+@media (max-width: 768px) {
+    /* Qualification section padding */
+    #qualification {
+        padding: 20px 10px;
+    }
 
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #ffffff; /* Background color */
+    /* Responsive typewriter heading */
+    h2.typewriter {
+        font-size: 24px;
+        line-height: 1.3;
+        margin-bottom: 20px;
+    }
+
+    /* Flex layout becomes column */
+    .information-technology {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    /* Resize images for smaller screens */
+    .photo {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+    }
+
+    /* List item text */
+    .information-technology li {
+        font-size: 0.9rem;
+        text-align: center;
+        max-width: 90%;
+    }
+
+    /* Download button full width and center */
+    .download-btn {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+        width: 80%;
+        max-width: 250px;
+        display: block;
+        margin: 20px auto 0 auto;
+    }
 }
+
+@media (max-width: 400px) {
+    h2.typewriter {
+        font-size: 20px;
+    }
+
+    .photo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .download-btn {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+}
+
+
 
 /* Pricing Container */
 .pricing-container {
@@ -575,7 +677,7 @@ h2 {
         font-size: 0.8rem; /* Slightly smaller text for features */
     }
 }
-
+  
 
 
 body {
@@ -687,3 +789,76 @@ body {
     margin: 0; /* Remove extra space around the body */
     padding: 0; /* Ensure consistent padding */
 }
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .slider-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .image-slider {
+    display: flex;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .image-box {
+    flex: 0 0 auto;
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Zoomed selected image */
+  .image-box.selected {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+  
+  /* Dim others slightly when one is selected */
+  .image-slider.has-selected .image-box:not(.selected) {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  
+  /* Responsive tweaks */
+  @media screen and (max-width: 768px) {
+    .image-box {
+      width: 70%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .image-box {
+      width: 90%;
+    }
+  }
+  
