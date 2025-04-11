@@ -456,7 +456,7 @@ h2.typewriter {
 h2.typewriter {
     font-size: 42px;
     font-weight: bold;
-    color: #ffffff; /* Gold for pop */
+    color: #000; /* Gold for pop */
     margin-bottom: 40px;
     text-transform: uppercase;
     animation: flicker 1.5s infinite; /* Funky flickering effect */
@@ -511,7 +511,7 @@ h2.typewriter {
 .information-technology li {
     font-weight: bold; /* Bold font */
     font-size: 1rem;
-    color: #ffffff;
+    color: #000;
     margin-top: 10px;
 }
 
@@ -521,8 +521,8 @@ h2.typewriter {
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
-    color: #001737;
-    background-color: #ffffff;
+    color: #ffff;
+    background-color: #001737;
     padding: 8px 16px;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
