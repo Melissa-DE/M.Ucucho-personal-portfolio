@@ -609,7 +609,7 @@ section {
 .flip-card-back ul.features li {
   padding: 0.3rem 0;
   border-bottom: 1px solid #e0e0e0;
-  color: #fff;
+  color: #000;
 }
 
 /* Learn More Button */
